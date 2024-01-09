@@ -67,7 +67,7 @@ add_routes(app, pinecone_wiki_chain, path="/pinecone-wikipedia")
 
 Add your app dependencies to `pyproject.toml` and `poetry.lock`:
 ```
-poetry add pinecone-client
+poetry add pinecone-client==3.0.0.dev6
 poetry add cohere
 poetry add openai
 ```
