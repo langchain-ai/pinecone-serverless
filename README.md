@@ -1,14 +1,16 @@
-## Pinecone-Wikipedia
+## Pinecone-Serverless
 
-Wikipedia is a rich source of informatiomn well-suited for semantic search.
+Pinecone is one of the most popular LangChain vectorstore integration partners.
 
-Recent efforts have indexed Wikipedia using Cohere embeddings [here](https://huggingface.co/datasets/Cohere/wikipedia-22-12) and [here](https://huggingface.co/datasets/Cohere/wikipedia-22-12-en-embeddings?row=6).
+The launch of Pinecone serverless enables “unlimited” index capacity via cloud object storage (ex. S3, GCS) along with decreased cost to serve (only pay for what you use).
 
-< To add context here >
+This pairs well with LangServe and LangSmith, making it easy to build production RAG applications.
+
+This template repo provide one such example.
 
 ### Index
 
-< To add context here >
+< Pinecone add context to building your index >
 
 ### API keys
 
@@ -17,8 +19,9 @@ Ensure these are set:
 * PINECONE_API_KEY
 * PINECONE_ENVIRONMENT
 * PINECONE_INDEX_NAME 
-* COHERE_API_KEY 
 * OPENAI_API_KEY
+
+Note: the choice of embedding model may require additional API keys.
 
 ### Deployment
 
