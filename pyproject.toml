@@ -13,7 +13,7 @@ python = "^3.11"
 uvicorn = "^0.23.2"
 langserve = {extras = ["server"], version = ">=0.0.30"}
 pydantic = "<2"
-pinecone-client = "^2.2.4"
+pinecone-client = "^3.0.0"
 cohere = "^4.40"
 openai = "^1.6.1"
 
