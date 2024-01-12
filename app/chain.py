@@ -16,9 +16,12 @@ PINECONE_API_KEY = os.environ["PINECONE_API_KEY"]
 PINECONE_ENVIRONMENT = os.environ["PINECONE_ENVIRONMENT"]
 PINECONE_INDEX_NAME = os.environ["PINECONE_INDEX_NAME"]
 
-pinecone = PineconeClient(api_key=PINECONE_API_KEY)
+pinecone = PineconeClient(api_key=PINECONE_API_KEY,
+                         environment=PINECONE_ENVIRONMENT)
+
 embeddings = CohereEmbeddings(model="multilingual-22-12")
-vectorstore = Pinecone.from_existing_index(index_name=PINECONE_INDEX_NAME,embedding=embeddings)
+vectorstore = Pinecone.from_existing_index(index_name=PINECONE_INDEX_NAME,
+                                           embedding=embeddings)
 
 retriever = vectorstore.as_retriever()
 
