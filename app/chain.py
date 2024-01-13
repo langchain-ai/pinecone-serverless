@@ -47,7 +47,7 @@ Question: {question}
 prompt = ChatPromptTemplate.from_template(template)
 
 # RAG
-model = ChatOpenAI(model="gpt-4-32k")
+model = ChatOpenAI(temperature=0, model="gpt-4-1106-preview")
 
 chain = (
     RunnableParallel({"context": retriever, "question": RunnablePassthrough()})

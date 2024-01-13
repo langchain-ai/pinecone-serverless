@@ -2,7 +2,7 @@
 name = "pinecone-wikipedia"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Lance Martin <lance@langchain.dev>"]
 readme = "README.md"
 packages = [
     { include = "app" },
@@ -17,7 +17,8 @@ pinecone-client = "3.0.0.dev8"
 cohere = "^4.40"
 openai = "^1.6.1"
 python-dotenv = "^1.0.0"
-langchain-community = "^0.0.11"
+langchain-community = ">=0.0.12,<0.1"
+jupyter = "^1.0.0"
 
 
 [tool.poetry.group.dev.dependencies]
