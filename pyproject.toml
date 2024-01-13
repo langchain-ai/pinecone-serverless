@@ -20,7 +20,6 @@ python-dotenv = "^1.0.0"
 langchain-community = ">=0.0.12,<0.1"
 jupyter = "^1.0.0"
 
-
 [tool.poetry.group.dev.dependencies]
 langchain-cli = ">=0.0.15"
 
