@@ -26,6 +26,7 @@ Note: the choice of embedding model may require additional API keys, such as:
 
 ### Notebook
 
+For prototyping:
 ```
 poetry run jupyter notebook
 ```
@@ -53,36 +54,32 @@ Dockerfile: App configurations
 pyproject.toml: Project configurations
 ```
 
-We won't need `packages`:
-```
-rm -rf packages
-```
-
-Modify the Dockerfile to remove `COPY ./packages ./packages`.
-
-**(2) Add your runnable (RAG app)**
-
-Create a file, `chain.py` with a runnable named `chain` that you want to execute. This is our RAG logic.
-
-Add `chain.py` to `app` directory.
-
-Import the runnable in `server.py`:
-```
-from app.chain import chain as pinecone_wiki_chain
-add_routes(app, pinecone_wiki_chain, path="/pinecone-wikipedia")
-```
-
 Add your app dependencies to `pyproject.toml` and `poetry.lock` to support Pinecone serverless:
 ```
 poetry add pinecone-client==3.0.0.dev8
 poetry add langchain-community==0.0.12
 poetry add cohere
 poetry add openai
+poetry add jupyter
 ```
 
 Update enviorment based on the updated lock file:
 ```
 poetry install
+```
+
+**(2) Add your runnable (RAG app)**
+
+Create a file, `chain.py` with a runnable named `chain` that you want to execute. 
+
+This is our RAG logic (e.g., that we prototyped in our notebook).
+
+Add `chain.py` to `app` directory.
+
+Import the LCEL object in `server.py`:
+```
+from app.chain import chain as pinecone_wiki_chain
+add_routes(app, pinecone_wiki_chain, path="/pinecone-wikipedia")
 ```
 
 Run locally
@@ -92,6 +89,10 @@ poetry run langchain serve
 
 **(3) Deploy it with hosted LangServe**
 
-Go to your LangSmith console and select `New Deployment`.
+Go to your LangSmith console.
 
-Specify the Github url along with the abovementioned API keys.
+Select `New Deployment`.
+
+Specify this Github url.
+
+Add the abovementioned API keys as secrets.
