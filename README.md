@@ -6,7 +6,7 @@ We see demand for tools that bridge the gap between prototyping and production. 
 
 ### Index
 
-Follow instructions from Pinecone on setting up your serverless index.
+Follow [instructions from Pinecone](https://www.pinecone.io/blog/serverless/) on setting up your serverless index.
 
 ### API keys
 
